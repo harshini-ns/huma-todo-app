@@ -1,8 +1,12 @@
 ## Todo App
 
 Created a web server with Huma that interacts with PostgreSQL for a simple Todo App in Golang. 
-This application implements postgreSQL as its own struct using dependency injection and struct embedding with methods attched to structs. 
-The application is organized into three key layers: the Database Layer for direct PostgreSQL interactions, the Business Logic Layer for implementing application logic and coordinating operations, and the API Layer, which exposes HTTP endpoints via Huma to handle client requests.
+This application implements postgreSQL as its own struct using dependency injection and struct embedding with methods attached to structs. 
+The application is organized into three key layers: 
+
+1) the Database Layer for direct PostgreSQL interactions,
+2) the Business Logic Layer for implementing application logic and coordinating operations, and
+3) the API Layer, which exposes HTTP endpoints via Huma to handle client requests.
 
 
 ### Create a todo:
