@@ -2,7 +2,7 @@
 
 Created a web server with Huma that interacts with PostgreSQL for a simple Todo App in Golang. 
 This application implements postgreSQL as its own struct using dependency injection and struct embedding with methods attched to structs. 
-The application has Database Layer, Business logic layer and API Layer that exposes HTTP endpoints via Huma.
+The application is organized into three key layers: the Database Layer for direct PostgreSQL interactions, the Business Logic Layer for implementing application logic and coordinating operations, and the API Layer, which exposes HTTP endpoints via Huma to handle client requests.
 
 
 ### Create a todo:
