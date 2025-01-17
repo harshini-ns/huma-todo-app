@@ -11,10 +11,6 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-func addTodo(todo *database.Todo) (*database.Todo, error) {
-	return database.TodoDAO.AddTodo(todo)
-}
-
 type inputTodo struct {
 	Body *database.Todo
 }
@@ -37,9 +33,6 @@ func InitHandler() {
 		todo := input.Body
 		resp := &outputTodo{}
 		fmt.Printf("Received Todo Payload: %+v\n", todo)
-		if todo.Title == "" || todo.Content == "" {
-			return nil, huma.Error400BadRequest("Title and content cannot be empty")
-		}
 		respTodo, err := addTodo(todo)
 		if err != nil {
 			return nil, huma.Error400BadRequest("error in addTodo")
@@ -91,12 +84,9 @@ func InitHandler() {
 		Summary:     "to update a todo by id",
 	}, func(ctx context.Context, input *inputTodo) (*outputTodo, error) {
 		todo := input.Body
-		if todo.Title == "" {
-			return nil, huma.Error400BadRequest(" invalid todo")
-		}
-		respTodo, err := database.TodoDAO.UpdateTodo(todo.ID, todo.Title, todo.Content)
+		respTodo, err := updateTodo(todo)
 		if err != nil {
-			return nil, huma.Error400BadRequest("failed")
+			return nil, huma.Error400BadRequest(" todo update failed")
 		}
 		return &outputTodo{
 			Body: respTodo,
