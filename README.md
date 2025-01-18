@@ -4,9 +4,9 @@ Created a web server with Huma that interacts with PostgreSQL for a simple Todo 
 This application implements postgreSQL as its own struct using dependency injection and struct embedding with methods attached to structs. 
 The application is organized into three key layers: 
 
-1) the Database Layer for direct PostgreSQL interactions,
-2) the Business Logic Layer for implementing application logic and coordinating operations, and
-3) the API Layer, which exposes HTTP endpoints via Huma to handle client requests.
+1) The Database Layer for direct PostgreSQL interactions,
+2) The Business Logic Layer for implementing application logic and coordinating operations, and
+3) The API Layer, which exposes HTTP endpoints via Huma to handle client requests.
 
 
 ### Create a todo:
